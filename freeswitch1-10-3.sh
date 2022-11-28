@@ -1,5 +1,5 @@
 #!/bin/bash
- 
+
 set -e
 
 echo '安装freeswitch的编译库'
