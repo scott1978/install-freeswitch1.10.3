@@ -7,6 +7,9 @@ echo "scott" > /etc/yum/vars/signalwireusername
 echo "pat_2mLLY6czvUx4F8U2ChrGwQ59" > /etc/yum/vars/signalwiretoken
 yum install -y https://$(< /etc/yum/vars/signalwireusername):$(< /etc/yum/vars/signalwiretoken)@freeswitch.signalwire.com/repo/yum/centos-dev/freeswitch-dev-repo-0-1.noarch.rpm epel-release
 yum-builddep -y freeswitch
+yum install -y yum-plugin-ovl centos-release-scl rpmdevtools yum-utils git
+wget https://copr.fedoraproject.org/coprs/hhorak/devtoolset-4-rebuild-bootstrap/repo/epel-7/hhorak-devtoolset-4-rebuild-bootstrap-epel-7.repo -O /etc/yum.repos.d/devtools-4.repo
+yum install -y devtoolset-4-gcc*
 
 echo '下载源码'
 cd $(dirname $0)
